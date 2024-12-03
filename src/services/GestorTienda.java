@@ -44,11 +44,12 @@ public class GestorTienda {
                 );
             }
         }
+        compra.calcularTotal();
         this.compraRepository.add(compra);
     }
 
     public double calcularIngresos() {
-        return compraRepository.findAll().stream().mapToDouble(Compra::calcularTotal).sum();
+        return compraRepository.findAll().stream().mapToDouble(Compra::getTotal).sum();
     }
 
     public List<Producto> filtrarProductos(Predicate<Producto> criterio) {

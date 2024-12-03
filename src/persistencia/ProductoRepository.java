@@ -21,6 +21,7 @@ public class ProductoRepository implements Repository<Producto> {
         ultimoId++;
         producto.setId(ultimoId);
         productos.add(producto);
+        
         gestorPersistencia.guardar(productos);
     }
 

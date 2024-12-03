@@ -9,8 +9,8 @@ import java.util.List;
 public class Compra implements Serializable {
     private static final long serialVersionUID = 2L;
     private int idCompra;
-    private String cliente;
-    private List<Producto> productos;
+    private final String cliente;
+    private final List<Producto> productos;
     private double total;
 
     public Compra(String cliente) {
@@ -23,8 +23,8 @@ public class Compra implements Serializable {
    
     }
     
-    public double calcularTotal(){
-        return productos.stream().mapToDouble(Producto::calcularPrecioFinal).sum();
+    public void calcularTotal(){
+        this.setTotal(productos.stream().mapToDouble(Producto::calcularPrecioFinal).sum());
     }
 
     public String mostrarDetalle(){
@@ -42,6 +42,14 @@ public class Compra implements Serializable {
 
     public void setIdCompra(int idCompra) {
         this.idCompra = idCompra;
+    }
+    
+    public void setTotal(double montoTotal){
+        this.total = montoTotal;
+    }
+    
+    public double getTotal(){
+        return this.total;
     }
 
     public List<Producto> getProductos() {
