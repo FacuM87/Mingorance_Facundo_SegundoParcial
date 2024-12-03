@@ -11,7 +11,7 @@ public abstract class Producto implements Serializable {
     protected double precioBase;
 
     public Producto(String nombre, double precioBase) {
-        if(!Validador.esTextoValido(nombre, 3)){
+        if(Validador.esTextoValido(nombre, 3)){
             throw new IllegalArgumentException("El nombre del producto no puede tener menos de 3 caracteres");
         }
         

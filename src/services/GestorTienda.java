@@ -23,7 +23,7 @@ public class GestorTienda {
     }
 
     public void agregarProducto(Producto producto) {
-        if (producto != null) {
+        if (producto == null) {
             throw new ElementoNuloException("No se pueden incorporar productos nulos");
         }
         productoRepository.add(producto);
