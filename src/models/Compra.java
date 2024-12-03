@@ -40,6 +40,10 @@ public class Compra implements Serializable {
         return idCompra;
     }
 
+    public void setIdCompra(int idCompra) {
+        this.idCompra = idCompra;
+    }
+
     public List<Producto> getProductos() {
         return productos;
     }
