@@ -44,7 +44,7 @@ public class GestorTienda {
                 );
             }
         }
-
+        this.compraRepository.add(compra);
     }
 
     public double calcularIngresos() {
