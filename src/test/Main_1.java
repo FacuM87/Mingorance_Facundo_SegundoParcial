@@ -1,4 +1,4 @@
-//Obviamente cambia las importaciones de las clases según tu proyecto.
+
 import models.Compra;
 import models.Electronico;
 import models.Producto;
